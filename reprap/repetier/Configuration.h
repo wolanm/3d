@@ -44,17 +44,19 @@
 
 // ################ END MANUAL SETTINGS ##########################
 
+#undef FAN2_PIN
+    #define FAN2_PIN -1
 #undef FAN_BOARD_PIN
 #define FAN_BOARD_PIN -1
 #define BOARD_FAN_SPEED 255
-#define BOARD_FAN_MIN_SPEED 0
-#define FAN_THERMO_PIN -1
+#define BOARD_FAN_MIN_SPEED 128
+#define FAN_THERMO_PIN 8
 #define FAN_THERMO_MIN_PWM 128
-#define FAN_THERMO_MAX_PWM 255
-#define FAN_THERMO_MIN_TEMP 45
+#define FAN_THERMO_MAX_PWM 128
+#define FAN_THERMO_MIN_TEMP 50
 #define FAN_THERMO_MAX_TEMP 60
-#define FAN_THERMO_THERMISTOR_PIN -1
-#define FAN_THERMO_THERMISTOR_TYPE 1
+#define FAN_THERMO_THERMISTOR_PIN TEMP_0_PIN
+#define FAN_THERMO_THERMISTOR_TYPE 8
 
 //#define EXTERNALSERIAL  use Arduino serial library instead of build in. Requires more ram, has only 63 byte input buffer.
 // Uncomment the following line if you are using Arduino compatible firmware made for Arduino version earlier then 1.0
@@ -101,7 +103,7 @@
 #define EXT0_HEAT_MANAGER 1
 #define EXT0_PREHEAT_TEMP 190
 #define EXT0_WATCHPERIOD 1
-#define EXT0_PID_INTEGRAL_DRIVE_MAX 255
+#define EXT0_PID_INTEGRAL_DRIVE_MAX 200
 #define EXT0_PID_INTEGRAL_DRIVE_MIN 40
 #define EXT0_PID_PGAIN_OR_DEAD_TIME 15.06
 #define EXT0_PID_I 1.34
@@ -173,9 +175,9 @@
 #define HEATED_BED_HEAT_MANAGER 1
 #define HEATED_BED_PID_INTEGRAL_DRIVE_MAX 255
 #define HEATED_BED_PID_INTEGRAL_DRIVE_MIN 80
-#define HEATED_BED_PID_PGAIN_OR_DEAD_TIME 143.71
-#define HEATED_BED_PID_IGAIN   4.12
-#define HEATED_BED_PID_DGAIN 361.77
+#define HEATED_BED_PID_PGAIN_OR_DEAD_TIME   14.46
+#define HEATED_BED_PID_IGAIN   1.33
+#define HEATED_BED_PID_DGAIN 58.91
 #define HEATED_BED_PID_MAX 255
 #define HEATED_BED_DECOUPLE_TEST_PERIOD 300000
 #define MIN_EXTRUDER_TEMP 150
@@ -330,7 +332,7 @@ It also can add a delay to wait for spindle to run on full speed.
 #define Z_HOME_DIR -1
 #define X_MAX_LENGTH 200
 #define Y_MAX_LENGTH 280
-#define Z_MAX_LENGTH 195
+#define Z_MAX_LENGTH 200
 #define X_MIN_POS 0
 #define Y_MIN_POS 0
 #define Z_MIN_POS 0
@@ -395,16 +397,16 @@ It also can add a delay to wait for spindle to run on full speed.
 #define STEP_DOUBLER_FREQUENCY 12000
 #define ALLOW_QUADSTEPPING 1
 #define DOUBLE_STEP_DELAY 0 // time in microseconds
-#define MAX_ACCELERATION_UNITS_PER_SQ_SECOND_X 500
-#define MAX_ACCELERATION_UNITS_PER_SQ_SECOND_Y 500
+#define MAX_ACCELERATION_UNITS_PER_SQ_SECOND_X 1000
+#define MAX_ACCELERATION_UNITS_PER_SQ_SECOND_Y 1000
 #define MAX_ACCELERATION_UNITS_PER_SQ_SECOND_Z 100
-#define MAX_TRAVEL_ACCELERATION_UNITS_PER_SQ_SECOND_X 1500
-#define MAX_TRAVEL_ACCELERATION_UNITS_PER_SQ_SECOND_Y 1500
+#define MAX_TRAVEL_ACCELERATION_UNITS_PER_SQ_SECOND_X 1000
+#define MAX_TRAVEL_ACCELERATION_UNITS_PER_SQ_SECOND_Y 1000
 #define MAX_TRAVEL_ACCELERATION_UNITS_PER_SQ_SECOND_Z 100
 #define INTERPOLATE_ACCELERATION_WITH_Z 0
 #define ACCELERATION_FACTOR_TOP 100
-#define MAX_JERK 5
-#define MAX_ZJERK 0.354
+#define MAX_JERK 20
+#define MAX_ZJERK 0.3
 #define PRINTLINE_CACHE_SIZE 16
 #define MOVE_CACHE_LOW 10
 #define LOW_TICKS_PER_MOVE 250000
@@ -469,7 +471,7 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 #define SERVO2_NEUTRAL_POS  -1
 #define SERVO3_NEUTRAL_POS  -1
 #define UI_SERVO_CONTROL 0
-#define FAN_KICKSTART_TIME  300
+#define FAN_KICKSTART_TIME  600
 #define MAX_FAN_PWM 255
 
         #define FEATURE_WATCHDOG 1
@@ -917,14 +919,14 @@ Values must be in range 1..255
     "featureFanControl": "1",
     "fanPin": "ORIG_FAN_PIN",
     "featureFan2Control": "0",
-    "fan2Pin": "ORIG_FAN2_PIN",
-    "fanThermoPin": -1,
+    "fan2Pin": -1,
+    "fanThermoPin": 8,
     "fanThermoMinPWM": 128,
-    "fanThermoMaxPWM": 255,
-    "fanThermoMinTemp": 45,
+    "fanThermoMaxPWM": 128,
+    "fanThermoMinTemp": 50,
     "fanThermoMaxTemp": 60,
-    "fanThermoThermistorPin": -1,
-    "fanThermoThermistorType": 1,
+    "fanThermoThermistorPin": "TEMP_0_PIN",
+    "fanThermoThermistorType": 8,
     "scalePidToMax": 0,
     "zProbePin": -1,
     "zProbeBedDistance": 10,
@@ -1016,7 +1018,7 @@ Values must be in range 1..255
     "filamentChangeRehome": 1,
     "filamentChangeShortRetract": 5,
     "filamentChangeLongRetract": 50,
-    "fanKickstart": 400,
+    "fanKickstart": 600,
     "servo0StartPos": -1,
     "servo1StartPos": -1,
     "servo2StartPos": -1,
@@ -1204,7 +1206,7 @@ Values must be in range 1..255
     "z2MinMaxPin": -1,
     "z2MinMaxEndstop": 0,
     "extruderIsZProbe": "0",
-    "boardFanMinSpeed": 0,
+    "boardFanMinSpeed": 128,
     "doorPin": -1,
     "doorEndstop": 0,
     "zhomePreRaise": 0,
