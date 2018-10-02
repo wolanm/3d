@@ -27,7 +27,7 @@
    to see and change the data. You can also upload it to newer/older versions. The system
    will silently add new options, so compilation continues to work.
 
-   This file is optimized for version 1.0.2
+   This file is optimized for version 1.0.3
    generator: http://www.repetier.com/firmware/dev/
 
    If you are in doubt which named functions use which pins on your board, please check the
@@ -471,7 +471,7 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 #define SERVO2_NEUTRAL_POS  -1
 #define SERVO3_NEUTRAL_POS  -1
 #define UI_SERVO_CONTROL 0
-#define FAN_KICKSTART_TIME  600
+#define FAN_KICKSTART_TIME  200
 #define MAX_FAN_PWM 255
 
         #define FEATURE_WATCHDOG 1
@@ -495,6 +495,7 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 #define Z_PROBE_XY_SPEED 150
 #define Z_PROBE_SWITCHING_DISTANCE 1
 #define Z_PROBE_REPETITIONS 1
+#define Z_PROBE_USE_MEDIAN 
 #define Z_PROBE_HEIGHT 40
 #define Z_PROBE_DELAY 0
 #define Z_PROBE_START_SCRIPT ""
@@ -532,6 +533,7 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 #define SDSUPPORT 0
 #undef SDCARDDETECT
 #define SDCARDDETECT -1
+#undef SDCARDDETECTINVERTED
 #define SDCARDDETECTINVERTED 0
 #endif
 #define SD_EXTENDED_DIR 1 /** Show extended directory including file length. Don't use this with Pronterface! */
@@ -1018,7 +1020,7 @@ Values must be in range 1..255
     "filamentChangeRehome": 1,
     "filamentChangeShortRetract": 5,
     "filamentChangeLongRetract": 50,
-    "fanKickstart": 600,
+    "fanKickstart": 200,
     "servo0StartPos": -1,
     "servo1StartPos": -1,
     "servo2StartPos": -1,
