@@ -337,7 +337,7 @@ It also can add a delay to wait for spindle to run on full speed.
 #define Y_MIN_POS 0
 #define Z_MIN_POS 0
 #define PARK_POSITION_X 0
-#define PARK_POSITION_Y 10
+#define PARK_POSITION_Y 0
 #define PARK_POSITION_Z_RAISE 10
 
 
@@ -495,7 +495,7 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 #define Z_PROBE_XY_SPEED 150
 #define Z_PROBE_SWITCHING_DISTANCE 1
 #define Z_PROBE_REPETITIONS 1
-#define Z_PROBE_USE_MEDIAN 
+#define Z_PROBE_USE_MEDIAN 0
 #define Z_PROBE_HEIGHT 40
 #define Z_PROBE_DELAY 0
 #define Z_PROBE_START_SCRIPT ""
@@ -544,20 +544,20 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 #define FEATURE_CHECKSUM_FORCED 0
 #define FEATURE_FAN_CONTROL 1
 #define FEATURE_FAN2_CONTROL 0
-#define FEATURE_CONTROLLER 0
+#define FEATURE_CONTROLLER 2
 #define ADC_KEYPAD_PIN -1
 #define LANGUAGE_EN_ACTIVE 1
-#define LANGUAGE_DE_ACTIVE 1
+#define LANGUAGE_DE_ACTIVE 0
 #define LANGUAGE_NL_ACTIVE 0
-#define LANGUAGE_PT_ACTIVE 1
-#define LANGUAGE_IT_ACTIVE 1
-#define LANGUAGE_ES_ACTIVE 1
+#define LANGUAGE_PT_ACTIVE 0
+#define LANGUAGE_IT_ACTIVE 0
+#define LANGUAGE_ES_ACTIVE 0
 #define LANGUAGE_FI_ACTIVE 0
 #define LANGUAGE_SE_ACTIVE 0
-#define LANGUAGE_FR_ACTIVE 1
+#define LANGUAGE_FR_ACTIVE 0
 #define LANGUAGE_CZ_ACTIVE 0
 #define LANGUAGE_PL_ACTIVE 1
-#define LANGUAGE_TR_ACTIVE 1
+#define LANGUAGE_TR_ACTIVE 0
 #define UI_PRINTER_NAME "RepRap"
 #define UI_PRINTER_COMPANY "Home made"
 #define UI_PAGES_DURATION 4000
@@ -587,7 +587,7 @@ Values must be in range 1..255
 #define UI_SET_MIN_HEATED_BED_TEMP  30
 #define UI_SET_MAX_HEATED_BED_TEMP 120
 #define UI_SET_MIN_EXTRUDER_TEMP   170
-#define UI_SET_MAX_EXTRUDER_TEMP   260
+#define UI_SET_MAX_EXTRUDER_TEMP   240
 #define UI_SET_EXTRUDER_FEEDRATE 2
 #define UI_SET_EXTRUDER_RETRACT_DISTANCE 3
 
@@ -828,7 +828,7 @@ Values must be in range 1..255
     "enableZProbing": "0",
     "extrudeMaxLength": 160,
     "homeOrder": "HOME_ORDER_ZXY",
-    "featureController": 0,
+    "featureController": 2,
     "uiPrinterName": "RepRap",
     "uiPrinterCompany": "Home made",
     "uiPagesDuration": 4000,
@@ -846,7 +846,7 @@ Values must be in range 1..255
     "uiMinHeatedBed": 30,
     "uiMaxHeatedBed": 120,
     "uiMinEtxruderTemp": 170,
-    "uiMaxExtruderTemp": 260,
+    "uiMaxExtruderTemp": 240,
     "uiExtruderFeedrate": 2,
     "uiExtruderRetractDistance": 3,
     "uiSpeeddependentPositioning": "0",
@@ -952,6 +952,7 @@ Values must be in range 1..255
     "zProbeY3": 160,
     "zProbeSwitchingDistance": 1,
     "zProbeRepetitions": 1,
+    "zProbeMedian": "0",
     "zProbeEveryPoint": "",
     "sdSupport": "0",
     "sdCardDetectPin": -1,
@@ -1146,17 +1147,17 @@ Values must be in range 1..255
     "zProbeDelay": 0,
     "uiBedCoating": "1",
     "langEN": "1",
-    "langDE": "1",
+    "langDE": "0",
     "langNL": "0",
-    "langPT": "1",
-    "langIT": "1",
-    "langES": "1",
+    "langPT": "0",
+    "langIT": "0",
+    "langES": "0",
     "langFI": "0",
     "langSE": "0",
-    "langFR": "1",
+    "langFR": "0",
     "langCZ": "0",
     "langPL": "1",
-    "langTR": "1",
+    "langTR": "0",
     "interpolateAccelerationWithZ": 0,
     "accelerationFactorTop": 100,
     "bendingCorrectionA": 0,
