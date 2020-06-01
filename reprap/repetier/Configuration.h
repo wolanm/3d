@@ -480,7 +480,7 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 
 #define Z_PROBE_Z_OFFSET 0
 #define Z_PROBE_Z_OFFSET_MODE 0
-#define UI_BED_COATING 1
+#define UI_BED_COATING 0
 #define FEATURE_Z_PROBE 0
 #define EXTRUDER_IS_Z_PROBE 0
 #define Z_PROBE_DISABLE_HEATERS 0
@@ -556,16 +556,16 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 #define LANGUAGE_SE_ACTIVE 0
 #define LANGUAGE_FR_ACTIVE 0
 #define LANGUAGE_CZ_ACTIVE 0
-#define LANGUAGE_PL_ACTIVE 1
+#define LANGUAGE_PL_ACTIVE 0
 #define LANGUAGE_TR_ACTIVE 0
-#define UI_PRINTER_NAME "RepRap"
+#define UI_PRINTER_NAME "Black Mamba"
 #define UI_PRINTER_COMPANY "Home made"
 #define UI_PAGES_DURATION 4000
 #define UI_SPEEDDEPENDENT_POSITIONING 0
-#define UI_DISABLE_AUTO_PAGESWITCH 1
+#define UI_DISABLE_AUTO_PAGESWITCH 0
 #define UI_AUTORETURN_TO_MENU_AFTER 30000
 #define FEATURE_UI_KEYS 0
-#define UI_ENCODER_SPEED 1
+#define UI_ENCODER_SPEED 2
 #define UI_REVERSE_ENCODER 0
 #define UI_KEY_BOUNCETIME 10
 #define UI_KEY_FIRST_REPEAT 500
@@ -829,14 +829,14 @@ Values must be in range 1..255
     "extrudeMaxLength": 160,
     "homeOrder": "HOME_ORDER_ZXY",
     "featureController": 2,
-    "uiPrinterName": "RepRap",
+    "uiPrinterName": "Black Mamba",
     "uiPrinterCompany": "Home made",
     "uiPagesDuration": 4000,
     "uiHeadline": "",
-    "uiDisablePageswitch": "1",
+    "uiDisablePageswitch": "0",
     "uiAutoReturnAfter": 30000,
     "featureKeys": "0",
-    "uiEncoderSpeed": 1,
+    "uiEncoderSpeed": 2,
     "uiReverseEncoder": "0",
     "uiKeyBouncetime": 10,
     "uiKeyFirstRepeat": 500,
@@ -1145,7 +1145,7 @@ Values must be in range 1..255
     "zProbeZOffsetMode": 0,
     "zProbeZOffset": 0,
     "zProbeDelay": 0,
-    "uiBedCoating": "1",
+    "uiBedCoating": "0",
     "langEN": "1",
     "langDE": "0",
     "langNL": "0",
@@ -1156,7 +1156,7 @@ Values must be in range 1..255
     "langSE": "0",
     "langFR": "0",
     "langCZ": "0",
-    "langPL": "1",
+    "langPL": "0",
     "langTR": "0",
     "interpolateAccelerationWithZ": 0,
     "accelerationFactorTop": 100,
