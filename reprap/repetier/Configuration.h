@@ -559,23 +559,23 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 #define LANGUAGE_PL_ACTIVE 0
 #define LANGUAGE_TR_ACTIVE 0
 #define UI_PRINTER_NAME "Black Mamba"
-#define UI_PRINTER_COMPANY "Home made"
+#define UI_PRINTER_COMPANY ""
 #define UI_PAGES_DURATION 4000
 #define UI_SPEEDDEPENDENT_POSITIONING 0
-#define UI_DISABLE_AUTO_PAGESWITCH 0
+#define UI_DISABLE_AUTO_PAGESWITCH 1
 #define UI_AUTORETURN_TO_MENU_AFTER 30000
 #define FEATURE_UI_KEYS 0
 #define UI_ENCODER_SPEED 2
-#define UI_REVERSE_ENCODER 0
-#define UI_KEY_BOUNCETIME 10
+#define UI_REVERSE_ENCODER 1
+#define UI_KEY_BOUNCETIME 20
 #define UI_KEY_FIRST_REPEAT 500
 #define UI_KEY_REDUCE_REPEAT 50
 #define UI_KEY_MIN_REPEAT 50
-#define FEATURE_BEEPER 0
+#define FEATURE_BEEPER 1
 #define CASE_LIGHTS_PIN -1
 #define CASE_LIGHT_DEFAULT_ON 1
 #define UI_START_SCREEN_DELAY 1000
-#define UI_DYNAMIC_ENCODER_SPEED 1
+#define UI_DYNAMIC_ENCODER_SPEED 0
         /**
 Beeper sound definitions for short beeps during key actions
 and longer beeps for important actions.
@@ -830,19 +830,19 @@ Values must be in range 1..255
     "homeOrder": "HOME_ORDER_ZXY",
     "featureController": 2,
     "uiPrinterName": "Black Mamba",
-    "uiPrinterCompany": "Home made",
+    "uiPrinterCompany": "",
     "uiPagesDuration": 4000,
     "uiHeadline": "",
-    "uiDisablePageswitch": "0",
+    "uiDisablePageswitch": "1",
     "uiAutoReturnAfter": 30000,
     "featureKeys": "0",
     "uiEncoderSpeed": 2,
-    "uiReverseEncoder": "0",
-    "uiKeyBouncetime": 10,
+    "uiReverseEncoder": "1",
+    "uiKeyBouncetime": 20,
     "uiKeyFirstRepeat": 500,
     "uiKeyReduceRepeat": 50,
     "uiKeyMinRepeat": 50,
-    "featureBeeper": "0",
+    "featureBeeper": "1",
     "uiMinHeatedBed": 30,
     "uiMaxHeatedBed": 120,
     "uiMinEtxruderTemp": 170,
@@ -1026,7 +1026,7 @@ Values must be in range 1..255
     "servo1StartPos": -1,
     "servo2StartPos": -1,
     "servo3StartPos": -1,
-    "uiDynamicEncoderSpeed": "1",
+    "uiDynamicEncoderSpeed": "0",
     "uiServoControl": 0,
     "killIfSensorDefect": "0",
     "jamSteps": 220,
