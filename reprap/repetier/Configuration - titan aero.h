@@ -27,7 +27,7 @@
    to see and change the data. You can also upload it to newer/older versions. The system
    will silently add new options, so compilation continues to work.
 
-   This file is optimized for version 1.0.3
+   This file is optimized for version 1.0.4dev
    generator: http://www.repetier.com/firmware/dev/
 
    If you are in doubt which named functions use which pins on your board, please check the
@@ -44,6 +44,9 @@
 
 // ################ END MANUAL SETTINGS ##########################
 
+#define HOST_RESCUE 1
+#undef FAN_PIN
+#define FAN_PIN 10
 #undef FAN2_PIN
     #define FAN2_PIN -1
 #undef FAN_BOARD_PIN
@@ -86,7 +89,7 @@
 #define EXT0_STEPS_PER_MM 418
 #define EXT0_TEMPSENSOR_TYPE 8
 #define EXT0_TEMPSENSOR_PIN TEMP_0_PIN
-#define EXT0_HEATER_PIN HEATER_0_PIN
+#define EXT0_HEATER_PIN 9
 #define EXT0_STEP_PIN ORIG_E1_STEP_PIN
 #define EXT0_DIR_PIN ORIG_E1_DIR_PIN
 #define EXT0_INVERSE 1
@@ -101,13 +104,13 @@
 #define EXT0_MAX_START_FEEDRATE 6
 #define EXT0_MAX_ACCELERATION 250
 #define EXT0_HEAT_MANAGER 1
-#define EXT0_PREHEAT_TEMP 190
+#define EXT0_PREHEAT_TEMP 200
 #define EXT0_WATCHPERIOD 1
 #define EXT0_PID_INTEGRAL_DRIVE_MAX 200
 #define EXT0_PID_INTEGRAL_DRIVE_MIN 40
-#define EXT0_PID_PGAIN_OR_DEAD_TIME 15.06
-#define EXT0_PID_I 1.34
-#define EXT0_PID_D 63.59
+#define EXT0_PID_PGAIN_OR_DEAD_TIME 8.78
+#define EXT0_PID_I 0.21
+#define EXT0_PID_D 26.64
 #define EXT0_PID_MAX 255
 #define EXT0_ADVANCE_K 0
 #define EXT0_ADVANCE_L 0
@@ -159,6 +162,7 @@
 #define USER_THERMISTORTABLE2 {}
 #define GENERIC_THERM_VREF 5
 #define GENERIC_THERM_NUM_ENTRIES 33
+#define TEMP_GAIN 0
 #define HEATER_PWM_SPEED 0
 #define COOLER_PWM_SPEED 2
 
@@ -374,10 +378,10 @@ It also can add a delay to wait for spindle to run on full speed.
 #define MAX_INACTIVE_TIME 0L
 #define MAX_FEEDRATE_X 200
 #define MAX_FEEDRATE_Y 200
-#define MAX_FEEDRATE_Z 2
+#define MAX_FEEDRATE_Z 4
 #define HOMING_FEEDRATE_X 40
 #define HOMING_FEEDRATE_Y 40
-#define HOMING_FEEDRATE_Z 2
+#define HOMING_FEEDRATE_Z 4
 #define HOMING_ORDER HOME_ORDER_ZXY
 #define ZHOME_PRE_RAISE 0
 #define ZHOME_PRE_RAISE_DISTANCE 10
@@ -558,6 +562,7 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 #define LANGUAGE_CZ_ACTIVE 0
 #define LANGUAGE_PL_ACTIVE 0
 #define LANGUAGE_TR_ACTIVE 0
+#define LANGUAGE_RU_ACTIVE 0
 #define UI_PRINTER_NAME "Black Mamba"
 #define UI_PRINTER_COMPANY ""
 #define UI_PAGES_DURATION 4000
@@ -587,7 +592,7 @@ Values must be in range 1..255
 #define UI_SET_MIN_HEATED_BED_TEMP  30
 #define UI_SET_MAX_HEATED_BED_TEMP 120
 #define UI_SET_MIN_EXTRUDER_TEMP   170
-#define UI_SET_MAX_EXTRUDER_TEMP   240
+#define UI_SET_MAX_EXTRUDER_TEMP   285
 #define UI_SET_EXTRUDER_FEEDRATE 2
 #define UI_SET_EXTRUDER_RETRACT_DISTANCE 3
 
@@ -631,16 +636,16 @@ Values must be in range 1..255
             "pidMax": 255,
             "sensorType": 8,
             "sensorPin": "TEMP_0_PIN",
-            "heaterPin": "HEATER_0_PIN",
+            "heaterPin": 9,
             "maxFeedrate": 25,
             "startFeedrate": 6,
             "invert": "1",
             "invertEnable": "0",
             "acceleration": 250,
             "watchPeriod": 1,
-            "pidP": 15.06,
-            "pidI": 1.34,
-            "pidD": 63.59,
+            "pidP": 8.78,
+            "pidI": 0.21,
+            "pidD": 26.64,
             "advanceK": 0,
             "advanceL": 0,
             "waitRetractTemp": 150,
@@ -675,7 +680,7 @@ Values must be in range 1..255
                 "dir": "ORIG_E0_DIR_PIN",
                 "enable": "ORIG_E0_ENABLE_PIN"
             },
-            "preheat": 190
+            "preheat": 200
         }
     ],
     "uiLanguage": 0,
@@ -700,8 +705,8 @@ Values must be in range 1..255
     "yHomingSpeed": 40,
     "yTravelAcceleration": 1000,
     "yPrintAcceleration": 1000,
-    "zMaxSpeed": 2,
-    "zHomingSpeed": 2,
+    "zMaxSpeed": 4,
+    "zHomingSpeed": 4,
     "zTravelAcceleration": 100,
     "zPrintAcceleration": 100,
     "xMotor": {
@@ -846,7 +851,7 @@ Values must be in range 1..255
     "uiMinHeatedBed": 30,
     "uiMaxHeatedBed": 120,
     "uiMinEtxruderTemp": 170,
-    "uiMaxExtruderTemp": 240,
+    "uiMaxExtruderTemp": 285,
     "uiExtruderFeedrate": 2,
     "uiExtruderRetractDistance": 3,
     "uiSpeeddependentPositioning": "0",
@@ -919,7 +924,7 @@ Values must be in range 1..255
     "forceChecksum": "0",
     "sdExtendedDir": "1",
     "featureFanControl": "1",
-    "fanPin": "ORIG_FAN_PIN",
+    "fanPin": 10,
     "featureFan2Control": "0",
     "fan2Pin": -1,
     "fanThermoPin": 8,
@@ -1158,6 +1163,7 @@ Values must be in range 1..255
     "langCZ": "0",
     "langPL": "0",
     "langTR": "0",
+    "langRU": "0",
     "interpolateAccelerationWithZ": 0,
     "accelerationFactorTop": 100,
     "bendingCorrectionA": 0,
@@ -1236,12 +1242,16 @@ Values must be in range 1..255
     "TMC2130CSE0": -1,
     "TMC2130CSE1": -1,
     "TMC2130CSE2": -1,
+    "TMC2130CSE3": -1,
+    "TMC2130CSE4": -1,
     "TMC2130CurrentX": 1000,
     "TMC2130CurrentY": 1000,
     "TMC2130CurrentZ": 1000,
     "TMC2130CurrentE0": 1000,
     "TMC2130CurrentE1": 1000,
     "TMC2130CurrentE2": 1000,
+    "TMC2130CurrentE3": 1000,
+    "TMC2130CurrentE4": 1000,
     "TMC2130CoolstepTresholdX": 300,
     "TMC2130CoolstepTresholdY": 300,
     "TMC2130CoolstepTresholdZ": 300,
@@ -1251,9 +1261,16 @@ Values must be in range 1..255
     "microstepE0": 16,
     "microstepE1": 16,
     "microstepE2": 16,
+    "microstepE3": 16,
+    "microstepE4": 16,
     "parkPosX": 0,
     "parkPosY": 0,
     "parkPosZ": 10,
+    "emergencyParser": -1,
+    "hostRescue": "1",
+    "MAX31855SwCS": -1,
+    "MAX31855SwCLK": -1,
+    "tempGain": "0",
     "hasMAX6675": false,
     "hasMAX31855": false,
     "hasGeneric1": false,
@@ -1263,8 +1280,9 @@ Values must be in range 1..255
     "hasUser1": false,
     "hasUser2": false,
     "numExtruder": 1,
-    "version": 100.2,
-    "primaryPortName": ""
+    "version": 100.4,
+    "primaryPortName": "",
+    "hasMAX31855SW": false
 }
 ========== End configuration string ==========
 
